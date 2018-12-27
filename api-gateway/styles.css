@@ -1,0 +1,34 @@
+.service-list li {
+    font-size: 20px;
+}
+
+.slide .service-list > li::before {
+    content: '';
+}
+
+section .card h5 {
+    margin-top: 0 ;
+    text-align: center;
+}
+
+section .card ul li {
+    padding: 0 25px 0 25px;
+}
+
+.columns.three .card li,
+.columns.two .card li
+{
+    font-size: 15px;
+}
+
+pre.language-php {
+    font-size: 15px;
+}
+
+.slide .schema {
+    text-align: center
+}
+
+.progress:before {
+    content: "Api management avec Kong"
+}

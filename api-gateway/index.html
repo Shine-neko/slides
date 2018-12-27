@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Api management avec Kong</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+<body class="shower list">
+
+    <header class="caption">
+        <h1>Api management avec KONG</h1>
+    </header>
+
+    <section class="slide" id="cover">
+        <h2>Api management avec Kong</h2>
+        <div style="text-align: left;">
+            <p>Mbechezi Nawo</a></p>    
+            <p>Dev @ikimea</p>
+            <p><img src="pictures/twitter.png" alt="" style="vertical-align: middle;"/>@Shine_neko</p>
+        </div>
+        <div>
+            <p style="text-align: right;">Bridge lover</p>
+            <p style="text-align: right;">Dompteur de legacy</p>
+        </div>
+    
+        <figure>
+            <img class="cover" src="pictures/cover.jpg" alt="Lama style">
+            <figcaption class="copyright right white">
+                <a href="http://fiftyfootshadows.net/">© John Carey</a>
+            </figcaption>
+        </figure>
+        <style>
+            #cover h2 {
+                margin: 30px 0 0;
+                color: white;
+                text-align: center;
+                font-size: 70px;
+            }
+
+            #cover p {
+                margin: 10px 0 0;
+                color: white;
+                font-style: italic;
+                font-size: 20px;
+            }
+
+            #cover p a {
+                color: white;
+            }
+
+            .service-list li {
+                list-style: none;
+                color: #fff;
+                padding: 0 50px;
+                margin-bottom: 10px;
+                background: #4b86c2;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Qu'est ce qu'est un micro service ? </h2>
+        <figure>
+            <blockquote>
+                En informatique, les <strong>microservices</strong> sont un style d'architecture logicielle à partir duquel un ensemble <strong>complexe</strong> d'applications est <strong>décomposé</strong> en plusieurs <strong>processus indépendants et faiblement couplés, souvent spécialisés dans une seule tâche.</strong> Les processus <strong>indépendants</strong> communiquent les uns avec les autres en utilisant des API <strong>langage-agnostiques.</strong>
+            </blockquote>
+        </figure>
+        <p class="note">© Wikipedia </p>
+    </section>
+
+    <section class="slide">
+        <h2>Problèmatique d'une API </h2>
+        <ul class="service-list">
+            <li class="next">Authentification </li>
+            <li class="next">Caching</li>     
+            <li class="next">CORS</li>     
+            <li class="next">Logging</li>     
+            <li class="next">Transformations</li>    
+            <li class="next">Rate-limit </li>
+            <li class="next"> … and more.</li>
+        </ul>
+    </section>
+    <section class="slide">
+        <h2>Multiples services</h2>
+        <div class="columns two">
+            <div class="card">
+                <h5>Invoices</h5>
+                <ul class="service-list">
+                    <li>Authentification </li>
+                    <li>Caching</li>     
+                    <li>CORS</li>     
+                    <li>Logging</li>     
+                    <li>Transformations</li>    
+                    <li>Rate-limit </li>
+                    <li> … and more.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="slide">
+        <h2>Multiples services</h2>
+        <div class="columns two">
+            <div class="card">
+                <h5>Invoices</h5>
+                <ul class="service-list">
+                    <li>Authentification </li>
+                    <li>Caching</li>     
+                    <li>CORS</li>     
+                    <li>Logging</li>     
+                    <li>Transformations</li>    
+                    <li>Rate-limit </li>
+                    <li> … and more.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h5>Order</h5>
+                <ul class="service-list">
+                    <li>Authentification </li>
+                    <li>Caching</li>     
+                    <li>CORS</li>     
+                    <li>Logging</li>     
+                    <li>Transformations</li>    
+                    <li>Rate-limit </li>
+                    <li> … and more.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Multiples services</h2>
+        <div class="columns three">
+            <div class="card">
+                <h5>Invoices</h5>
+                <ul class="service-list">
+                    <li>Authentification </li>
+                    <li>Caching</li>     
+                    <li>CORS</li>     
+                    <li>Logging</li>     
+                    <li>Transformations</li>    
+                    <li>Rate-limit </li>
+                    <li> … and more.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h5>Orders</h5>
+                <ul class="service-list">
+                    <li>Authentification </li>
+                    <li>Caching</li>     
+                    <li>CORS</li>     
+                    <li>Logging</li>     
+                    <li>Transformations</li>    
+                    <li>Rate-limit </li>
+                    <li> … and more.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h5>Customers</h5>
+                <ul class="service-list">
+                    <li>Authentification </li>
+                    <li>Caching</li>     
+                    <li>CORS</li>     
+                    <li>Logging</li>     
+                    <li>Transformations</li>    
+                    <li>Rate-limit </li>
+                    <li> … and more.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <p class="schema">
+            <img src="https://media.giphy.com/media/YGCX1Du8Ez0vm/giphy.gif" width="700" height="400" />
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Api Gateway</h2>
+        <p>Une Api Gateway va nous permettre de gérer la publication, la superversion et l’échange  de tous les services.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Api Gateway</h2>
+        <p class="schema">
+            <img src="pictures/api-gateway2.001.jpeg" width="80%" />
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Implementation</h2>
+        <div class="columns two">
+            <div>
+                <pre class="language-php">
+                    <code class="language-php">$content = '';</code>
+                    <code class="language-php">if ('/invoices' === $_SERVER['REQUEST_URI']) {</code>
+                    <code class="language-php">   $content .= file_get_contents('http//serviceA');</code>
+                    <code class="language-php"> } elseif ('/orders' === $_SERVER['REQUEST_URI']) {</code>
+                    <code class="language-php">   $content .= file_get_contents('http//serviceB');</code>
+                    <code class="language-php">} elseif ('/customers' === $_SERVER['REQUEST_URI']) {</code>
+                    <code class="language-php">   $content .= file_get_contents('http//serviceC');</code>
+                    <code class="language-php">}</code>
+                    <code>echo $content;</code>
+                </pre>
+            </div>
+            <div>
+                <img src="pictures/trollface.gif" />
+            </div>
+        </div>
+    
+    </section>
+
+    <section class="slide">
+        <p class="schema">
+            <img src="https://media0.giphy.com/media/3oEdv9Xaqm76AzUsvu/giphy.gif?cid=3640f6095c16a05b6951617459811ea1" />
+        </p>
+    </section>
+
+    <section class="slide">
+        <p class="schema">
+            <img src="pictures/assembly-line.svg" height="450px" alt="" />
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>
+            <svg xmlns="http://www.w3.org/2000/svg" width="36px" height="32px" viewBox="0 0 36 32" version="1.1">
+                <g fill="#004b80" fill-rule="evenodd" stroke="none" stroke-width="1">
+                    <path id="kogo-foot" d="M11.5197255 26.1503163l-.8635306 1.0892615 1.9496674 3.0352708-.2028406 1.4047695h8.2698045l.5715827-1.4047694-3.3235398-4.1245323"></path>
+                    <path id="kogo-arm" d="M16.0419367 7.6788574l-2.9904407 5.217346L27.6417615 30.102853l-.416374 1.5768942h6.6917954l1.213155-5.5967952L19.516473 7.6736904"></path>
+                    <path id="kogo-head" d="M22.240985.323L18.02702 3.7548358l-1.420208 2.6119024h3.5270284l6.0583236 7.181763 3.6022026-2.9461408v-1.87238l-1.2526864-1.7503105.9247716-.9581496"></path>
+                    <path id="kogo-body" d="M7.166948 18.2954268H5.1955705l-5.195441 6.5756128v6.8087722h5.573904l.9827724-1.276564 4.3017758-5.5493238h6.2183927l1.9146726-2.9222434-6.7436395-7.977153"></path>
+                </g>
+            </svg>
+            Kong :  est une solution d'API management basé sur Nginx
+        </h2>
+    </section>
+
+    <section class="slide">
+        <h2>
+            <svg xmlns="http://www.w3.org/2000/svg" width="36px" height="32px" viewBox="0 0 36 32" version="1.1">
+            <g fill="#004b80" fill-rule="evenodd" stroke="none" stroke-width="1">
+                <path id="kogo-foot" d="M11.5197255 26.1503163l-.8635306 1.0892615 1.9496674 3.0352708-.2028406 1.4047695h8.2698045l.5715827-1.4047694-3.3235398-4.1245323"></path>
+                <path id="kogo-arm" d="M16.0419367 7.6788574l-2.9904407 5.217346L27.6417615 30.102853l-.416374 1.5768942h6.6917954l1.213155-5.5967952L19.516473 7.6736904"></path>
+                <path id="kogo-head" d="M22.240985.323L18.02702 3.7548358l-1.420208 2.6119024h3.5270284l6.0583236 7.181763 3.6022026-2.9461408v-1.87238l-1.2526864-1.7503105.9247716-.9581496"></path>
+                <path id="kogo-body" d="M7.166948 18.2954268H5.1955705l-5.195441 6.5756128v6.8087722h5.573904l.9827724-1.276564 4.3017758-5.5493238h6.2183927l1.9146726-2.9222434-6.7436395-7.977153"></path>
+            </g>
+            </svg>
+            Kong :  est une solution d'API management basé sur Nginx
+        </h2>
+        <p class="schema" style="background-color: #2B303B; padding-top: 15px;">
+            <img height="300px" src="pictures/kong-architecture.svg" />
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>
+           On reprend notre schema
+        </h2>
+        <p class="schema">
+            <img src="pictures/kong-schema.svg" height="400px"/>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>
+           Platforms support
+        </h2>
+        <p class="schema">
+            <img src="pictures/platform-support.png" height="300px"/>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Administration</h2>
+       
+        <p>Kong écoute par défaut sur 3 ports.</p>
+        <img src="pictures/management-3.002.jpeg" />
+    </section>
+
+    <section class="slide">
+        <h2>Store/Hub Plugins</h2>
+    
+        <p class="schema">
+            <img src="pictures/hub.png" style="width: 80%" />
+        </p>
+    </section>
+
+
+    <section class="slide">
+        <h2>Plugin oriented platform</h2>
+
+        <p class="schema">Just to it</p>
+        <p class="schema">
+                <img src="https://media1.giphy.com/media/3ohBVolwASZU06yxUs/200.webp?cid=3640f6095c19247d4432456536094beb" />
+        </p>
+    </section>
+    <section class="slide">
+        <h2 class="shout shrink">Demo</h2>
+        <p class="schema">
+            <img src="pictures/giphy.webp" />
+        </p>
+        <iframe src="https://giphy.com/embed/3o7aD43xbIl7shOMx2" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p></p>
+    </section>
+
+    <section class="slide">
+        <h2>Une nouvelle route</h2>
+        <pre>
+            <code>
+                curl -i -X POST \
+                --url http://localhost:8001/services/ \
+                --data 'name=afsy' \
+                --data 'url=http://mockbin.org/request'
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Voir la liste des routes</h2>
+        <pre>
+            <code>
+                curl -i -X GET \
+                --url http://localhost:8001/services/
+            </code>
+        </pre>
+    </section>
+    <section class="slide">
+        <h2>Enregistrer une route</h2>
+        <pre>
+            <code>
+                curl -i -X POST \
+                --url http://localhost:8001/services/afsy/routes \
+                --data 'paths=/'
+    
+                --data 'hosts[]=example.com'
+            </code>
+        </pre>
+    </section>
+    <section class="slide">
+        <h2>Requete à Kong</h2>
+        <pre>
+            <code>
+                curl -i -X GET \
+                --url http://localhost:8000/ \
+                --header 'Host: example.com'
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Merci </h2>
+        
+        <p><img src="pictures/twitter.png" alt="" style="vertical-align: middle;" />@Shine_neko</p>
+
+        <p class="schema">
+            <img src="pictures/sourire.jpg" width=300" alt="" />
+        </p>
+
+        <p class="schema">Des questions ?</p>
+    </section>
+
+    <div class="progress"></div>
+
+    <script src="shower/shower.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
