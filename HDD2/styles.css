@@ -1,0 +1,56 @@
+#cover h2, #cover2 h2 {
+    margin: 30px 0 0;
+    color: white;
+    text-align: center;
+    font-size: 70px;
+}
+
+#cover2 p {
+    margin: 10px 0 0;
+    color: white;
+    font-style: italic;
+    font-size: 20px;
+}
+
+#cover2 p a {
+    color: white;
+}
+
+.service-list li {
+    list-style: none;
+    color: #fff;
+    padding: 0 50px;
+    margin-bottom: 10px;
+    background: #4b86c2;
+}
+
+.service-list li {
+    font-size: 20px;
+}
+
+.slide .service-list > li::before {
+    content: '';
+}
+
+section .card h5 {
+    margin-top: 0 ;
+    text-align: center;
+}
+
+section .card ul li {
+    padding: 0 25px 0 25px;
+}
+
+.columns.three .card li,
+.columns.two .card li
+{
+    font-size: 15px;
+}
+
+pre.language-php {
+    font-size: 15px;
+}
+
+.slide .schema {
+    text-align: center
+}
