@@ -1,3 +1,6 @@
+#cover {
+    background: #000;
+}
 #cover h2, #cover2 h2 {
     margin: 30px 0 0;
     color: white;
@@ -53,8 +56,4 @@ pre.language-php {
 
 .slide .schema {
     text-align: center
-}
-
-.progress:before {
-    content: "Api management avec Kong"
 }
